@@ -2,7 +2,7 @@
 import requests,json
 false = False
 
-def dk(authorization):
+def dk(authorization,ThreadId,name):
     url_post="https://api.jielong.co/api/Thread/EditCheckInRecord"
     headers={
         "Accept-Encoding":"gzip, deflate, br",
@@ -15,7 +15,7 @@ def dk(authorization):
     }
 
     data={
-        "Id":0,"ThreadId":ThreadId,"Number":"","Signature":"name","RecordValues":[{"FieldId":1,"Values":[],"Texts":[],"OtherValue":"","MatrixValues":[],"Files":[],"Scores":[],"HasValue":false},{"FieldId":2,"Values":[],"Texts":[],"OtherValue":"","MatrixValues":[],"Files":[],"Scores":[],"HasValue":false}],"DateTarget":"","IsNeedManualAudit":false,"MinuteTarget":-1,"IsNameNumberComfirm":false
+        "Id":0,"ThreadId":ThreadId,"Number":"","Signature":name,"RecordValues":[{"FieldId":1,"Values":[],"Texts":[],"OtherValue":"","MatrixValues":[],"Files":[],"Scores":[],"HasValue":false},{"FieldId":2,"Values":[],"Texts":[],"OtherValue":"","MatrixValues":[],"Files":[],"Scores":[],"HasValue":false}],"DateTarget":"","IsNeedManualAudit":false,"MinuteTarget":-1,"IsNameNumberComfirm":false
         }
 
     r=requests.post(url_post,headers=headers,data=json.dumps(data))
